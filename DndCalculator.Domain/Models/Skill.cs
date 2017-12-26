@@ -1,9 +1,4 @@
-﻿using DndCalculator.Domain.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DndCalculator.Domain.Models
+﻿namespace DndCalculator.Domain.Models
 {
     public class Skill
     {

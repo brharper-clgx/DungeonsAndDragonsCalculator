@@ -1,8 +1,5 @@
-﻿using DndCalculator.Domain.Contracts;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace DndCalculator.Domain.Models
