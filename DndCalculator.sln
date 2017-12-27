@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DndCalculator.Domain", "Dnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DndCalculator.Domain.Tests", "DndCalculator.Domain.Tests\DndCalculator.Domain.Tests.csproj", "{E34339D8-793A-46FE-904E-820D9EA56CED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DndCalculator.UI", "DndCalculator.UI\DndCalculator.UI.csproj", "{CA8C18DB-D0DF-47F3-93C5-CD978B339988}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E34339D8-793A-46FE-904E-820D9EA56CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E34339D8-793A-46FE-904E-820D9EA56CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E34339D8-793A-46FE-904E-820D9EA56CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8C18DB-D0DF-47F3-93C5-CD978B339988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8C18DB-D0DF-47F3-93C5-CD978B339988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8C18DB-D0DF-47F3-93C5-CD978B339988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8C18DB-D0DF-47F3-93C5-CD978B339988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
