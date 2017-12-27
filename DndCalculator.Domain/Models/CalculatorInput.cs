@@ -2,20 +2,43 @@
 {
     public class CalculatorInput
     {
-        public CalculatorInput()
+        private bool withAdvantage;
+        private bool withDisadvantage;
+
+        public CalculatorInput() {}
+
+        public CalculatorInput(int chance, int mod)
         {
-            ChanceOfSuccessPercentage = 50;
-            NumberOfDice = 1;
-            NumberOfSides = 20;
+            ChanceOfSuccessPercentage = chance;
+            Modifier = mod;
+        }
+
+        public CalculatorInput(
+            int chance, 
+            int mod, 
+            bool withAdvantage = false, 
+            bool withDisadvantage = false)
+        {
+            ChanceOfSuccessPercentage = chance;
+            Modifier = mod;
+            WithAdvantage = withAdvantage;
+            WithDisadvantage = withDisadvantage;
         }
 
         public int ChanceOfSuccessPercentage { get; set; }
-        public int NumberOfDice { get; set; }
-        public int NumberOfSides { get; set; }
         public int Modifier { get; set; }
-        public int ProficiencyBonus { get; set; }
-        public bool IsProficient { get; set; }
-        public bool WithAdvantage { get; set; }
-        public bool WithDisadvantage { get; set; }
+        
+
+        public bool WithAdvantage
+        {
+            get { return withAdvantage && !withDisadvantage; }
+            set { withAdvantage = value; }
+        }
+
+        public bool WithDisadvantage
+        {
+            get { return withDisadvantage && !withAdvantage; }
+            set { withDisadvantage = value; }
+        }
     }
 }

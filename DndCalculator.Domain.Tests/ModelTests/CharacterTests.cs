@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace DndCalculator.Domain.Tests
+namespace DndCalculator.Domain.Tests.ModelTests
 {
-    public class CharacterTest
+    public class CharacterTests
     {
         [Fact]
         public void Character_Ctor_ShouldBuildFromJson()
