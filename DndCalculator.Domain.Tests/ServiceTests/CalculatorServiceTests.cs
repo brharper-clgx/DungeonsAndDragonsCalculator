@@ -15,10 +15,9 @@ namespace DndCalculator.Domain.Tests.ServiceTests
             // Arrange 
             var modifier = 3; // Expected results depend on this value.
             var target = new CalculatorService();
-            var input = new CalculatorInput(percentage, modifier);
 
             // Act
-            var result = target.GetDifficultyClass(input);
+            var result = target.GetDifficultyClass(percentage, modifier);
 
             // Assert
             Assert.Equal(expectedResult, result);
@@ -28,11 +27,12 @@ namespace DndCalculator.Domain.Tests.ServiceTests
         public void CalculatorService_GetDifficultyClass_WithAdvantage()
         {
             // Arrange
+            var percentage = 32;
+            var modifier = 3;
             var target = new CalculatorService();
-            var input = new CalculatorInput(32, 3, true);
 
             // Act
-            var result = target.GetDifficultyClass(input);
+            var result = target.GetDifficultyClass(percentage, modifier, true);
 
             // Assert
             Assert.Equal(20, result);
@@ -42,14 +42,30 @@ namespace DndCalculator.Domain.Tests.ServiceTests
         public void CalculatorService_GetDifficultyClass_WithDisadvantage()
         {
             // Arrange
+            var percentage = 32;
+            var modifier = 3;
             var target = new CalculatorService();
-            var input = new CalculatorInput(32, 3, false, true);
 
             // Act
-            var result = target.GetDifficultyClass(input);
+            var result = target.GetDifficultyClass(percentage, modifier, false, true);
 
             // Assert
             Assert.Equal(13, result);
+        }
+
+        [Fact]
+        public void CalculatorService_GetDifficultyClass_AdvantageAndDisadvantageCancel()
+        {
+            // Arrange
+            var percentage = 32;
+            var modifier = 3;
+            var target = new CalculatorService();
+
+            // Act
+            var result = target.GetDifficultyClass(percentage, modifier, true, true);
+
+            // Assert
+            Assert.Equal(18, result);
         }
     }
 }

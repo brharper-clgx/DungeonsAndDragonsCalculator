@@ -10,17 +10,17 @@ namespace DndCalculator.Domain.Services
         {
         }
 
-        public int GetDifficultyClass(CalculatorInput input)
+        public int GetDifficultyClass(int successPercentage, int modifierPlusProficiency, bool withAdvantage = false, bool withDisadvantage = false)
         {
-            if(input.WithAdvantage)
+            if(withAdvantage && !withDisadvantage)
             {
-                return AdvantageCheck(input.ChanceOfSuccessPercentage, input.Modifier);
+                return AdvantageCheck(successPercentage, modifierPlusProficiency);
             }
-            if (input.WithDisadvantage)
+            else if (withDisadvantage && !withAdvantage)
             {
-                return DisadvantageCheck(input.ChanceOfSuccessPercentage, input.Modifier);
+                return DisadvantageCheck(successPercentage, modifierPlusProficiency);
             }
-            return PlainCheck(input.ChanceOfSuccessPercentage, input.Modifier);
+            return PlainCheck(successPercentage, modifierPlusProficiency);
         }
 
         private int PlainCheck(int chance, int mod)
