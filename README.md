@@ -6,7 +6,7 @@ A numeric tool for DMs and players.
 
 ## Explanation of Functions
 ### DC Calc
-The difficulty class calculator is intended for DMs. The DM specifies the likelihood (as a percentage) that a task is successfull and the DC Calc displays an appropriate difficulty class for that likelihood.
+The difficulty class calculator is intended for DMs. The DM specifies the likelihood (as a percentage) that a task is successful and the DC Calc displays an appropriate difficulty class for that likelihood.
 
 There are options for rolling with advantage, disadvantage, and modifiers. However, use of these options is not recommended (i.e., leave Adv and Dis are unchecked, and mod = 0). Without these options the difficulty class represents an objective difficulty that a character's particular attributes and circumstances may overcome (it would be odd, for example, if a stealthy monk and clamorous paladin had the same likelihood of sneaky past a battalion of guards). However, these features were included for the edge cases in which those factors need to be considered.
 
