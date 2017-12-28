@@ -1,14 +1,15 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DndCalculator.Domain.Models;
-using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Linq;
-using Xunit;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace DndCalculator.Domain.Tests.ModelTests
+namespace DndCalculator.Domain.Test
 {
+    [TestClass]
     public class CharacterTests
     {
-        [Fact]
+        [TestMethod]
         public void Character_Ctor_ShouldBuildFromJson()
         {
             // Arrange
@@ -18,11 +19,11 @@ namespace DndCalculator.Domain.Tests.ModelTests
             var result = new Character(json);
 
             // Assert
-            Assert.Equal("Egor", result.Name);
-            Assert.Equal(AbilityEnum.Charisma, (AbilityEnum)result.Abilities.First().Name);
+            Assert.AreEqual("Egor", result.Name);
+            Assert.AreEqual(AbilityEnum.Charisma, (AbilityEnum)result.Abilities.First().Name);
         }
 
-        [Fact]
+        [TestMethod]
         public void Character_GetJson_ShouldReturnJson()
         {
             // Arrange
@@ -34,11 +35,11 @@ namespace DndCalculator.Domain.Tests.ModelTests
             Character characterFromResult = JsonConvert.DeserializeObject<Character>(result);
 
             // Assert
-            Assert.Equal(name, characterFromResult.Name);
-            Assert.Equal(AbilityEnum.Charisma, (AbilityEnum)characterFromResult.Abilities.First().Name);
+            Assert.AreEqual(name, characterFromResult.Name);
+            Assert.AreEqual(AbilityEnum.Charisma, (AbilityEnum)characterFromResult.Abilities.First().Name);
         }
 
-        [Fact]
+        [TestMethod]
         public void Character_GetAbilityModifier_ShouldReturnAbilityModifier()
         {
             // Arrange
@@ -49,11 +50,11 @@ namespace DndCalculator.Domain.Tests.ModelTests
             var constitutionResult = target.GetAbilityModifier(AbilityEnum.Constitution);
 
             // Assert
-            Assert.Equal(1, charismaResult);
-            Assert.Equal(-1, constitutionResult);
+            Assert.AreEqual(1, charismaResult);
+            Assert.AreEqual(-1, constitutionResult);
         }
 
-        [Fact]
+        [TestMethod]
         public void Character_GetSkillModifier_ShouldReturnSkillModifier()
         {
             // Arrange
@@ -64,8 +65,8 @@ namespace DndCalculator.Domain.Tests.ModelTests
             var intimidationResult = target.GetSkillModifier(SkillEnum.Intimidation);
 
             // Assert
-            Assert.Equal(3, deceptionResult);
-            Assert.Equal(1, intimidationResult);
+            Assert.AreEqual(3, deceptionResult);
+            Assert.AreEqual(1, intimidationResult);
         }
 
         private Character GetTestCharacter()
@@ -88,3 +89,4 @@ namespace DndCalculator.Domain.Tests.ModelTests
         }
     }
 }
+ 

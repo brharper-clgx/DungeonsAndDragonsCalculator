@@ -23,6 +23,11 @@ namespace DndCalculator.Domain.Services
             return PlainCheck(successPercentage, modifierPlusProficiency);
         }
 
+        public decimal GetExpectedValue(decimal numberOfDice, decimal sidesOfDice, decimal modifier)
+        {
+            return numberOfDice*(sidesOfDice + 1) / 2 + modifier;
+        }
+
         private int PlainCheck(int chance, int mod)
         {
             return (int)Math.Round(21 + mod - 20 * ((float)chance / 100));

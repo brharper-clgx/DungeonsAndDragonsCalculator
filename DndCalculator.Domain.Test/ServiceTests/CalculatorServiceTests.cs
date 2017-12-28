@@ -1,15 +1,15 @@
-﻿using DndCalculator.Domain.Models;
-using DndCalculator.Domain.Services;
-using Xunit;
+﻿using DndCalculator.Domain.Services;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DndCalculator.Domain.Tests.ServiceTests
+namespace DndCalculator.Domain.Test.ServiceTests
 {
+    [TestClass]
     public class CalculatorServiceTests
     {
-        [Theory]
-        [InlineData(100, 4)]
-        [InlineData(32, 18)]
-        [InlineData(0, 24)]
+        [DataTestMethod]
+        [DataRow(100, 4)]
+        [DataRow(32, 18)]
+        [DataRow(0, 24)]
         public void CalculatorService_GetDifficultyClass_PlainCheck(int percentage, int expectedResult)
         {
             // Arrange 
@@ -20,10 +20,10 @@ namespace DndCalculator.Domain.Tests.ServiceTests
             var result = target.GetDifficultyClass(percentage, modifier);
 
             // Assert
-            Assert.Equal(expectedResult, result);
+            Assert.AreEqual(expectedResult, result);
         }
 
-        [Fact]
+        [TestMethod]
         public void CalculatorService_GetDifficultyClass_WithAdvantage()
         {
             // Arrange
@@ -35,10 +35,10 @@ namespace DndCalculator.Domain.Tests.ServiceTests
             var result = target.GetDifficultyClass(percentage, modifier, true);
 
             // Assert
-            Assert.Equal(20, result);
+            Assert.AreEqual(20, result);
         }
 
-        [Fact]
+        [TestMethod]
         public void CalculatorService_GetDifficultyClass_WithDisadvantage()
         {
             // Arrange
@@ -50,10 +50,10 @@ namespace DndCalculator.Domain.Tests.ServiceTests
             var result = target.GetDifficultyClass(percentage, modifier, false, true);
 
             // Assert
-            Assert.Equal(13, result);
+            Assert.AreEqual(13, result);
         }
 
-        [Fact]
+        [TestMethod]
         public void CalculatorService_GetDifficultyClass_AdvantageAndDisadvantageCancel()
         {
             // Arrange
@@ -65,7 +65,23 @@ namespace DndCalculator.Domain.Tests.ServiceTests
             var result = target.GetDifficultyClass(percentage, modifier, true, true);
 
             // Assert
-            Assert.Equal(18, result);
+            Assert.AreEqual(18, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(1, 20, 0, 10.5f)]
+        [DataRow(4, 6, 2, 16.0f)]
+        [DataRow(5, 8, -1, 21.5f)]
+        public void CalculatorService_GetExpectedValue_ShouldReturnExpectedValue(int numDice, int numSides, int mod, float expectedResult)
+        {
+            // Arrange
+            var target = new CalculatorService();
+
+            // Act
+            var result = target.GetExpectedValue(numDice, numSides, mod);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }

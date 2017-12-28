@@ -48,16 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DifficultyClassUI.cs">
+    <Compile Include="CalculatorUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DifficultyClassUI.Designer.cs">
-      <DependentUpon>DifficultyClassUI.cs</DependentUpon>
+    <Compile Include="CalculatorUI.Designer.cs">
+      <DependentUpon>CalculatorUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DifficultyClassUI.resx">
-      <DependentUpon>DifficultyClassUI.cs</DependentUpon>
+    <EmbeddedResource Include="CalculatorUI.resx">
+      <DependentUpon>CalculatorUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
