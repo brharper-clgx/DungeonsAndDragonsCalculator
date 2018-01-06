@@ -82,16 +82,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorUI.cs">
+    <Compile Include="CalculatorRootUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculatorUI.Designer.cs">
-      <DependentUpon>CalculatorUI.cs</DependentUpon>
+    <Compile Include="CalculatorRootUI.Designer.cs">
+      <DependentUpon>CalculatorRootUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DifficultyClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DifficultyClassForm.Designer.cs">
+      <DependentUpon>DifficultyClassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpectedValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpectedValueForm.Designer.cs">
+      <DependentUpon>ExpectedValueForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CalculatorUI.resx">
-      <DependentUpon>CalculatorUI.cs</DependentUpon>
+    <EmbeddedResource Include="CalculatorRootUI.resx">
+      <DependentUpon>CalculatorRootUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DifficultyClassForm.resx">
+      <DependentUpon>DifficultyClassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpectedValueForm.resx">
+      <DependentUpon>ExpectedValueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

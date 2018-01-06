@@ -22,7 +22,7 @@ namespace DndCalculator.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
-            Application.Run(container.GetInstance<CalculatorUI>());
+            Application.Run(container.GetInstance<CalculatorRootUI>());
         }
 
         private static void Bootstrap()
