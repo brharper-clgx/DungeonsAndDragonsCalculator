@@ -2,7 +2,7 @@
 A numeric tool for DMs and players.
 
 ## Use It!
-[Download Here.](http://www.mediafire.com/file/wbeqnli6x1ev69l/DndCalculator.zip) Unzip and run *setup.exe*.
+[Download Here.](https://rink.hockeyapp.net/apps/e10c36ff535045e8bf47dd1726e872ec) Unzip and run *setup.exe*.
 
 ## Explanation of Functions
 ### DC Calc
